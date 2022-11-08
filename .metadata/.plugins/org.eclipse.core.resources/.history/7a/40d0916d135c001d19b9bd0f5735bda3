@@ -1,0 +1,13 @@
+package test;
+
+public class Serialize {
+
+	public static void main(String[] args) 
+	{
+		Rectangle rect = new Rectangle(5.8,9);
+		System.out.println(rect.area());
+		System.out.println(rect.perimeter());
+		System.out.println(rect.width);
+	}
+
+}

@@ -1,0 +1,26 @@
+package practice;
+
+import io.restassured.RestAssured.*;
+import io.restassured.specification.RequestSpecification;
+
+public class PracticeLink4 
+{
+    public static void main(String[] args) {
+        post();
+    }
+    
+    public static void post() {
+          RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+          RequestSpecification httpRequest = RestAssured.given();
+          JSONObject requestParams = new JSONObject();
+          requestParams.put("title", "Krishna");
+          requestParams.put("body", "Director");
+          requestParams.put("userId", "Krish786");
+          httpRequest.header("Content-Type", "application/json");
+          httpRequest.body(requestParams.toJSONString());
+          Response response = httpRequest.post("/posts");
+          System.out.println("The response recived is : " + response.statusLine());
+          ResponseBody body = response.getBody();
+          System.out.println(body.asString());
+    }
+}

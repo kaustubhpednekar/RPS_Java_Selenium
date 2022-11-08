@@ -1,0 +1,55 @@
+package stepDefinations;
+
+import org.json.simple.JSONObject;
+
+import io.cucumber.java.en.*;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.specification.RequestSpecification;
+
+public class Steps 
+{
+	String BaseUrl = "https://reqres.in/api";
+	@Given("List of users are available")
+	public void list_of_users_are_available() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+	Response response = spec.get("/users?page=2");
+	
+		System.out.println(response.getStatusCode());
+		System.out.println(response.getBody().asString());
+	}
+
+	@When("I add a new User")
+	public void i_add_a_new_user() {
+		RestAssured.baseURI = BaseUrl;
+		
+		  RestAssured.baseURI = "https://reqres.in/api";
+		  RequestSpecification spec = RestAssured.given();
+		 // RequestSpecification httpRequest = RestAssured.given();
+		  JSONObject requestParam = new JSONObject();
+		  requestParam.put("name", "Ruhi");
+		  requestParam.put("job", "Designer");
+		  spec.header("Content-Type","application/json");
+		  spec.body(requestParam.toString());
+		  
+		  Response response = spec.post("/users");
+		  System.out.println("The Response received is "+ response.statusLine());
+		  
+		  System.out.println(response.getBody().asString());
+		  
+		
+	}
+
+	@Then("new user is added")
+	public void new_user_is_added() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+		Response response = spec.get("/users?page=960");
+		System.out.println(response.getStatusCode());
+		System.out.println(response.getBody().asString());
+		
+	}
+
+}

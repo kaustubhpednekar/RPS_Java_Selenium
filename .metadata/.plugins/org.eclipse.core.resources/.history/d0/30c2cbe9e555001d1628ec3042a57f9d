@@ -1,0 +1,84 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class MedicinePage {
+	WebDriver driver;
+	public MedicinePage(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath="/html/body/div[2]/div[1]/div/ul/li[1]")
+	WebElement medicineDropDown;
+	
+	@FindBy(xpath="/html/body/div[2]/div[1]/div/ul/li[1]/ul/li[1]/a")
+	WebElement allMedicine;
+	
+	@FindBy(xpath="//*[@id=\"maincontent\"]/div[3]/div/h1")
+	WebElement scroll;
+	
+	@FindBy(xpath="//*[@id=\"list-nav\"]/div[1]/ul/li[2]/a")
+	WebElement selectAcne;
+
+	@FindBy(xpath="//*[@id=\"list-nav-nav\"]/div/a[4]")
+	WebElement selectCategory;
+
+	@FindBy(linkText = "D Acne Soap 75gm")
+	WebElement acneSoap;
+	
+	@FindBy(xpath="//*[@id=\"maincontent\"]/div[2]/div[1]/div[2]/div[1]/h1")
+	WebElement scroll1;
+	
+	@FindBy(xpath="//*[@id=\\\"pincode\\\"]")
+	WebElement pinCode;
+	
+	@FindBy(xpath="///*[@id=\\\"check_expiry_btn\\\"]/i")
+	WebElement arrowBtn;
+	
+	@FindBy(xpath="//*[@id=\\\"maincontent\\\"]/div[2]/div[1]/div[2]/div[8]/form/div/button/span[1]")
+	WebElement addToCart;
+	
+	public void clickMedicine()
+	{
+		medicineDropDown.click();
+	}
+	
+	public void clickAllMedicine()
+	{
+		allMedicine.click();
+	}
+	
+	public void scrolling()
+	{
+		 JavascriptExecutor j = (JavascriptExecutor) driver; 
+		 WebElement element1 =scroll;
+		 j.executeScript("arguments[0].scrollIntoView();", element1);
+	}
+	
+	public void clickMedicine()
+	{
+		medicineDropDown.click();
+	}
+	
+	public void clickMedicine()
+	{
+		medicineDropDown.click();
+	}
+	
+	public void clickMedicine()
+	{
+		medicineDropDown.click();
+	}
+	
+	public void clickMedicine()
+	{
+		medicineDropDown.click();
+	}
+}

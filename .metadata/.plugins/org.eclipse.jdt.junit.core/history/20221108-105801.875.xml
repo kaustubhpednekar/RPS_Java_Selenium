@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (5)" project="ReqResRestAssuredCucumber" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="runner.TestRunner" time="6.943">
+    <testsuite name="End2End Test for ReqRes API" time="6.943">
+      <testcase name="User is able to add a new user and delete existing user" classname="End2End Test for ReqRes API" time="6.943"/>
+    </testsuite>
+  </testsuite>
+</testrun>

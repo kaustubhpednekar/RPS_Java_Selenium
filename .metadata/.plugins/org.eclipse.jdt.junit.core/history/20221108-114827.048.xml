@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (5)" project="ReqResRestAssuredCucumber" tests="3" started="3" failures="0" errors="1" ignored="0">
+  <testsuite name="runner.TestRunner" time="11.645">
+    <testsuite name="Delete Request for ReqRes API" time="7.832">
+      <testcase name="User is able to delete a user" classname="Delete Request for ReqRes API" time="7.832"/>
+    </testsuite>
+    <testsuite name="Get Request for ReqRes API" time="2.813">
+      <testcase name="Getting list of user" classname="Get Request for ReqRes API" time="2.813">
+        <error>java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "allUsers" is null&#13;
+	at stepDefinations.Steps.display_the_list_of_users(Steps.java:46)&#13;
+	at ✽.Display the list of users(file:///C:/Users/Administrator/Java_Workplace/ReqResRestAssuredCucumber/Feature/GetReqRes.feature:6)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+    <testsuite name="Post Request for ReqRes API" time="0.998">
+      <testcase name="User is able to add a new user" classname="Post Request for ReqRes API" time="0.998"/>
+    </testsuite>
+  </testsuite>
+</testrun>

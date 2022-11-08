@@ -1,0 +1,33 @@
+package test;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.specification.RequestSpecification;
+
+public class TestNG_Post {
+	String token = "d9376e6d605ab10c338cc49fced6c09d75c77620b7f4cfdc0586592a2e99c6d9";
+  @Test
+  public void goRestPut() 
+  {
+	  RestAssured.baseURI = "https://gorest.co.in/";
+	  RequestSpecification httpRequest = RestAssured.given();
+	  JSONObject requestParam = new JSONObject();
+	  requestParam.put("id", 4438);
+	  requestParam.put("name", "Rahul");
+	  requestParam.put("email", "rahul@gmail.com");
+	  requestParam.put("gender", "male");
+	  requestParam.put("status", "Active");
+	  httpRequest.header("Authorization","Bearer" +token);
+	  httpRequest.header("Content-Type","application/json");
+	  httpRequest.body(requestParam.toJSONString());
+	  
+	  Response response = httpRequest.put("/public/v2/users/4438");
+	  System.out.println("The Response received is "+ response.statusLine());
+	  
+	  System.out.println(response.getBody().asString());
+  }
+}

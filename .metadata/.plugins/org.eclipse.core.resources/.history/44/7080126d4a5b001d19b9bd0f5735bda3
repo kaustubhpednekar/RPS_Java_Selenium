@@ -1,0 +1,17 @@
+package test;
+import static io.restassured.RestAssured.*;
+public class MyFirstRestAssuredClass {
+
+	static String url = "https://reqres.in/api/users?page=2";
+	
+	public static void main(String[] args) 
+	{
+		
+	}
+	
+	public static void getResponseBody()
+	{
+		given().when().get(url).then().log().all();
+	}
+
+}

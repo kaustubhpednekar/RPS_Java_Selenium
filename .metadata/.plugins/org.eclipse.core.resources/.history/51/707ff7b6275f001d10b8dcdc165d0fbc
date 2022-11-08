@@ -1,0 +1,6 @@
+Feature: Delete Request for ReqRes API
+
+Scenario: User is able to add a new user
+Given List of users are available
+When I delete a User
+Then new user is added

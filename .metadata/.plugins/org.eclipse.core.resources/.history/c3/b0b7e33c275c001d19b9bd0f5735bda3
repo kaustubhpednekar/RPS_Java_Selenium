@@ -1,0 +1,20 @@
+package test;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class AuthDemo 
+{
+	@Test
+	public void authentication()
+	{
+		RestAssured.baseURI="https://restapi.demoqa.com/authentication/CheckForAuthentication";
+		RequestSpecification spec = RestAssured.given();
+		Response response = spec.get();
+		System.out.println(response.statusCode());
+	}
+
+}

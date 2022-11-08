@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (5)" project="ReqResRestAssuredCucumber" tests="4" started="4" failures="1" errors="0" ignored="0">
+  <testsuite name="runner.TestRunner" time="12.963">
+    <testsuite name="Get Request for ReqRes API" time="10.177">
+      <testcase name="To Get a list of user" classname="Get Request for ReqRes API" time="10.177"/>
+    </testsuite>
+    <testsuite name="Post Request for ReqRes API" time="0.993">
+      <testcase name="User is able to add a new user" classname="Post Request for ReqRes API" time="0.993"/>
+    </testsuite>
+    <testsuite name="Put Request for ReqRes API" time="0.816">
+      <testcase name="User is able to delete a record" classname="Put Request for ReqRes API" time="0.815"/>
+    </testsuite>
+    <testsuite name="Delete Request for ReqRes API" time="0.974">
+      <testcase name="User is able to delete existing record" classname="Delete Request for ReqRes API" time="0.974">
+        <failure>java.lang.AssertionError: expected [200] but found [204]&#13;
+	at org.testng.Assert.fail(Assert.java:110)&#13;
+	at org.testng.Assert.failNotEquals(Assert.java:1413)&#13;
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)&#13;
+	at org.testng.Assert.assertEquals(Assert.java:131)&#13;
+	at org.testng.Assert.assertEquals(Assert.java:1240)&#13;
+	at org.testng.Assert.assertEquals(Assert.java:1274)&#13;
+	at stepDefinations.Steps.one_user_is_deleted(Steps.java:119)&#13;
+	at ✽.One user is deleted(file:///C:/Users/Administrator/Java_Workplace/ReqResRestAssuredCucumber/Feature/F04_DeleteReqRes.feature:6)&#13;
+&#13;
+</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

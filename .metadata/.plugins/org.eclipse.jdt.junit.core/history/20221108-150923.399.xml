@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (5)" project="ReqResRestAssuredCucumber" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="runner.TestRunner" time="12.74">
+    <testsuite name="Get Request for ReqRes API" time="10.02">
+      <testcase name="To Get a list of user" classname="Get Request for ReqRes API" time="10.02"/>
+    </testsuite>
+    <testsuite name="Post Request for ReqRes API" time="0.971">
+      <testcase name="User is able to add a new user" classname="Post Request for ReqRes API" time="0.971"/>
+    </testsuite>
+    <testsuite name="Put Request for ReqRes API" time="0.913">
+      <testcase name="User is able to delete a record" classname="Put Request for ReqRes API" time="0.913"/>
+    </testsuite>
+    <testsuite name="Delete Request for ReqRes API" time="0.834">
+      <testcase name="User is able to delete existing record" classname="Delete Request for ReqRes API" time="0.834"/>
+    </testsuite>
+  </testsuite>
+</testrun>

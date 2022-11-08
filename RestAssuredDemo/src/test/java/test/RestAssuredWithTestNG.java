@@ -1,0 +1,22 @@
+package test;
+
+import static io.restassured.RestAssured.given;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+
+public class RestAssuredWithTestNG {
+	static String url = "https://reqres.in/api/users?page=2";
+  @Test
+  public void getReqResUsers() 
+  {
+	  given().when().get(url).then().log().all();
+	  given().queryParam("page", "2").when().get("https://reqres.in/api/users.php").then().log().body();
+		int statusCode = given().queryParam("page", "2").when().get("https://reqres.in/api/users.php").getStatusCode();
+		System.out.println(statusCode);
+		
+		Assert.assertEquals(statusCode, 200);
+	  
+  }
+}

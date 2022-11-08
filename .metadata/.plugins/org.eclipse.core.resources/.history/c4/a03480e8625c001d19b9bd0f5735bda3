@@ -1,0 +1,15 @@
+package practice;
+import static io.restassured.RestAssured.*;
+public class PracticeLink2 
+{
+	  static String url = "https://bikewise.org/api/v2/incidents/";
+	    
+	    public static void main(String[] args) {
+	        getResponseHeaders();
+	    }
+	    
+	    public static void getResponseHeaders() {
+	        
+	        System.out.println("The headers from the response are : " + given().when().get(url).then().extract().headers());
+	    }
+}

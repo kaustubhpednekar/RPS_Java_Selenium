@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pages.LoginPage&apos; to &apos;LoginPage1&apos;&#x0D;&#x0A;- Original project: &apos;ExternalHotel&apos;&#x0D;&#x0A;- Original element: &apos;pages.LoginPage&apos;&#x0D;&#x0A;- Renamed element: &apos;pages.LoginPage1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LoginPage&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;pages{LoginPage.java[LoginPage" matchStrategy="1" name="LoginPage1" qualified="false" references="true" similarDeclarations="true" stamp="1666933322110" textual="false" version="1.0"/>
+</session>

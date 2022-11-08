@@ -1,0 +1,24 @@
+package practice;
+
+public class PracticeLink 
+{
+    
+    static String url = "https://alexwohlbruck.github.io/cat-facts/";
+
+    public static void main(String[] args) {
+        getResponseStatus();
+    }
+    
+    public static void getResponseBody() {
+            given().when().get("https://alexwohlbruck.github.io/cat-facts/").then().log().body();
+    }
+    
+    public static void getResponseStatus() {
+        
+        int s = given().when().get("https://reqres.in/api/unknown").getStatusCode();
+        String p =  given().when().get("https://alexwohlbruck.github.io/cat-facts/").getStatusLine();
+        System.out.println(s);
+        System.out.println(p);
+    }
+
+}

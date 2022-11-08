@@ -1,0 +1,38 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+
+public class LoginPage1 
+{
+	WebDriver driver;
+	public LoginPage1(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	@FindBy(id="username")
+	WebElement uName;
+	
+	@FindAll({
+		@FindBy(id="password"),
+		@FindBy(name="password")
+	})
+	WebElement pwd;
+	
+	@FindAll({
+		@FindBy(id="login"),
+		@FindBy(className="button"),
+		@FindBy(name="login_button")
+	})
+	WebElement loginBtn;
+	public void loginAction(String user, String pass)
+	{
+		uName.sendKeys(user);
+		pwd.sendKeys(pass);
+		loginBtn.click();
+	}
+
+}

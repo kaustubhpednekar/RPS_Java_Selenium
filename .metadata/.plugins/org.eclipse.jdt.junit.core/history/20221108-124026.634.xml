@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (5)" project="ReqResRestAssuredCucumber" tests="4" started="4" failures="0" errors="1" ignored="0">
+  <testsuite name="runner.TestRunner" time="13.793">
+    <testsuite name="Get Request for ReqRes API" time="10.598">
+      <testcase name="Getting a list of user" classname="Get Request for ReqRes API" time="10.598"/>
+    </testsuite>
+    <testsuite name="Post Request for ReqRes API" time="1.186">
+      <testcase name="User is able to add a new user" classname="Post Request for ReqRes API" time="1.186"/>
+    </testsuite>
+    <testsuite name="Put Request for ReqRes API" time="0.849">
+      <testcase name="User is able to delete a user" classname="Put Request for ReqRes API" time="0.849">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at stepDefinations.Steps.user_is_updated(Steps.java:104)&#13;
+	at ✽.User is updated(file:///C:/Users/Administrator/Java_Workplace/ReqResRestAssuredCucumber/Feature/F03_PutReqRes.feature:6)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+    <testsuite name="Delete Request for ReqRes API" time="1.155">
+      <testcase name="User is able to delete a user" classname="Delete Request for ReqRes API" time="1.155"/>
+    </testsuite>
+  </testsuite>
+</testrun>

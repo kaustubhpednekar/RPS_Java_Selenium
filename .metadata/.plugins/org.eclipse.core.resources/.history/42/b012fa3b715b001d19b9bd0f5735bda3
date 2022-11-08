@@ -1,0 +1,9 @@
+package test;
+
+import org.testng.annotations.Test;
+
+public class TestNG_PostReq {
+  @Test
+  public void postReqRes() {
+  }
+}

@@ -1,0 +1,21 @@
+package test;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class AuthDemo 
+{
+	@Test
+	public void authentication()
+	{
+		RestAssured.baseURI="https://qhiug7xk62.execute-api.eu-central-1.amazonaws.com/default/Bucket";
+		RequestSpecification spec = RestAssured.given();
+		Response response = spec.get();
+		System.out.println(response.getStatusCode());
+		System.out.println(response.body().asString());
+	}
+
+}

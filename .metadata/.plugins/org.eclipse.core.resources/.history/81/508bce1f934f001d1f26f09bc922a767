@@ -1,0 +1,25 @@
+package test;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class MyFirstSeleniumGrid {
+
+	public static void main(String[] args) throws MalformedURLException 
+	{
+       String baseUrl ="http:/adactinhotelapp.com";
+       String gridUrl ="http://172.20.0.30:4444";
+       ChromeOptions opt = new ChromeOptions();
+       opt.addArguments("start-maximized");
+       opt.addArguments("chrome.switches","--disable--extensions");
+       opt.addArguments("--enable-popup-blocking");
+       System.out.println("Starting execution in grid");
+       WebDriver driver = new RemoteWebDriver(new URL(gridUrl),opt);
+       
+	}
+
+}

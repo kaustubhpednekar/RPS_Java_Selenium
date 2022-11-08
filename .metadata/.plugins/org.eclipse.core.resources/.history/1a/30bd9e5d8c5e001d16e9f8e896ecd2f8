@@ -1,0 +1,22 @@
+package test;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class AuthDemo2 
+{
+	@Test
+	public void authentication()
+	{
+		RestAssured.baseURI="https://postman-echo.com/basic-auth";
+//		RequestSpecification spec = RestAssured.given().auth().basic("postman", "password");
+		RequestSpecification spec = RestAssured.given().auth().oauth2("577a840690fcc58a2fc2a1d3bbba5a0f5bee3c5b");
+		Response response = spec.get();
+		System.out.println(response.getStatusCode());
+		System.out.println(response.body().asString());
+	}
+
+}

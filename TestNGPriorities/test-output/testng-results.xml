@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-20T15:19:33 IST" name="Suite" finished-at="2022-10-20T15:19:51 IST" duration-ms="17950">
+    <groups>
+    </groups>
+    <test started-at="2022-10-20T15:19:33 IST" name="Test" finished-at="2022-10-20T15:19:41 IST" duration-ms="8763">
+      <class name="test.CrossBrowser">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:test.CrossBrowser@79e2c065]" started-at="2022-10-20T15:19:33 IST" name="beforeTest" finished-at="2022-10-20T15:19:38 IST" duration-ms="5570" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="f()[pri:0, instance:test.CrossBrowser@79e2c065]" started-at="2022-10-20T15:19:38 IST" name="f" finished-at="2022-10-20T15:19:41 IST" duration-ms="2694" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.CrossBrowser@79e2c065]" started-at="2022-10-20T15:19:41 IST" name="afterTest" finished-at="2022-10-20T15:19:41 IST" duration-ms="352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.CrossBrowser -->
+    </test> <!-- Test -->
+    <test started-at="2022-10-20T15:19:42 IST" name="Test1" finished-at="2022-10-20T15:19:51 IST" duration-ms="9087">
+      <class name="test.CrossBrowser">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:test.CrossBrowser@34a3d150]" started-at="2022-10-20T15:19:42 IST" name="beforeTest" finished-at="2022-10-20T15:19:48 IST" duration-ms="6013" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="f()[pri:0, instance:test.CrossBrowser@34a3d150]" started-at="2022-10-20T15:19:48 IST" name="f" finished-at="2022-10-20T15:19:50 IST" duration-ms="2653" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.CrossBrowser@34a3d150]" started-at="2022-10-20T15:19:50 IST" name="afterTest" finished-at="2022-10-20T15:19:51 IST" duration-ms="395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.CrossBrowser -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Suite -->
+</testng-results>

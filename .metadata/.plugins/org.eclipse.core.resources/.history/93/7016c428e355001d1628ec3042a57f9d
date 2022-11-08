@@ -1,0 +1,31 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class MedicinePage {
+	//WebDriver driver;
+	public MedicinePage(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath="/html/body/div[2]/div[1]/div/ul/li[1]")
+	WebElement medicineDropDown;
+	
+	@FindBy(xpath="/html/body/div[2]/div[1]/div/ul/li[1]/ul/li[1]/a")
+	WebElement allMedicine;
+	
+	@FindBy()
+	WebElement loginBtn;
+	public void loginAction(String user, String pass)
+	{
+		uName.sendKeys(user);
+		pwd.sendKeys(pass);
+		loginBtn.click();
+	}
+
+}

@@ -1,0 +1,13 @@
+package test;
+
+public class Rectangle 
+{
+	double height;
+	double width;
+	
+	public Rectangle()
+	{
+		
+	}
+
+}

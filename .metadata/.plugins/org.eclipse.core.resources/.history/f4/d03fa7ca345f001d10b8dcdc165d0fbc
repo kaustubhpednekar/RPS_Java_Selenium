@@ -1,0 +1,129 @@
+package stepDefinations;
+
+import java.util.List;
+import stepDefinations.*;
+import org.json.simple.JSONObject;
+import io.cucumber.java.en.*;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class Steps 
+{
+	String BaseUrl = "https://reqres.in/api";
+	@Given("List of users are available")
+	public void list_of_users_are_available() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+	Response response = spec.get("/users?page=2");
+		System.out.println(response.getBody().asString());
+		System.out.println(response.getStatusCode());
+	
+	}
+	
+	@When("I get list of users")
+	public void i_get_list_of_users() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+		Response response = spec.get("/users?page=2");
+		JsonPath eval = response.jsonPath();
+		
+	}
+
+	@Then("Display the list of users")
+	public void display_the_list_of_users() {
+		  RestAssured.baseURI = BaseUrl;
+		  RequestSpecification spec = RestAssured.given();
+		  Response response = spec.get("/users?page=2");
+		  System.out.println(response.body().asString());
+		  JsonPath eval = response.jsonPath();
+//		  List<String> allUsers = eval.getList("first_name");
+//		  for(String user: allUsers)
+//		  {
+//			  System.out.println(user);
+//		  }
+		  
+		  //User[] user = response.jsonPath().getObject("data", User[].class);
+		  User[] users = eval.getObject("data", User[].class);
+		  for(User user : users)
+		  {
+			  System.out.println("The First name is : "+user.first_name);
+		  }
+	}
+
+	@When("I add a new User")
+	public void i_add_a_new_user() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+		  RestAssured.baseURI = "https://reqres.in/api";
+		  JSONObject requestParam = new JSONObject();
+		  requestParam.put("id", 2);
+		  requestParam.put("email", "Ruhi");
+		  requestParam.put("first_name", "Manoj");
+		  requestParam.put("last_name", "Kumar");
+		  requestParam.put("avatar", "Ruhi");
+		  spec.header("Content-Type","application/json");
+		  spec.body(requestParam.toString());
+		  
+		  Response response = spec.post("/users");
+		  System.out.println("The Response received is "+ response.statusLine());
+		  System.out.println(response.getBody().asString());
+		  System.out.println(response.getStatusCode());
+		  
+		
+	}
+
+	@Then("new user is added")
+	public void new_user_is_added() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+		Response response = spec.get("/users");
+		System.out.println(response.getStatusCode());
+		System.out.println(response.getBody().asString());
+		
+	}
+
+	@When("Update a User")
+	public void update_a_user() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+		  RestAssured.baseURI = "https://reqres.in/api";
+		  JSONObject requestParam = new JSONObject();
+		  requestParam.put("name", "Ruhi");
+		  requestParam.put("job", "Designer");
+		  spec.header("Content-Type","application/json");
+		  spec.body(requestParam.toString());
+		  
+		  Response response = spec.put("/users");
+	}
+
+	@Then("User is updated")
+	public void user_is_updated() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	
+	@When("I delete a User")
+	public void i_delete_a_User() {
+			RestAssured.baseURI = BaseUrl;
+		  RequestSpecification httpRequest = RestAssured.given();
+		  RestAssured.baseURI = "https://reqres.in/api";
+		  JSONObject requestParam = new JSONObject();
+		  httpRequest.body(requestParam.toJSONString());
+		  
+		  Response response = httpRequest.delete("/users/2");
+		  System.out.println("The Response received is "+ response.statusLine());
+		  System.out.println(response.getBody().asString());
+		  System.out.println(response.getStatusCode());
+	}
+	
+	@Then("One user is deleted")
+	public void one_user_is_deleted() {
+		RestAssured.baseURI = BaseUrl;
+		RequestSpecification spec = RestAssured.given();
+		Response response = spec.get("/users/2");
+		System.out.println(response.getStatusCode());
+		System.out.println(response.getBody().asString());
+	}
+}
